@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Retro Castle Color Palette */
+  --castle-stone: #5a5a5a;
+  --castle-stone-dark: #3a3a3a;
+  --castle-stone-light: #8a8a8a;
+  --castle-brown: #8b6f47;
+  --castle-brown-dark: #654321;
+  --castle-gold: #ffd700;
+  --castle-red: #8b0000;
+  --castle-blue: #4169e1;
+  --castle-green: #2d8b2d;
+  --parchment: #f4e8d0;
+  --parchment-dark: #d4c8b0;
+  
+  --font-size: 16px;
+  --background: #2a2a2a;
+  --foreground: #f4e8d0;
+  --font-weight-medium: 400;
+  --font-weight-normal: 400;
+}
+
+@layer base {
+  * {
+    @apply border-castle-stone;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  body {
+    @apply bg-castle-stone-dark text-parchment;
+    font-family: 'Press Start 2P', cursive;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer base {
+  h1 {
+    font-size: 1.5rem;
+    line-height: 2;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  h3 {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  p, label, button, input {
+    font-size: 0.75rem;
+    line-height: 1.6;
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Pixel-perfect borders */
+.pixel-border {
+  border-style: solid;
+  border-image-slice: 2;
+  border-image-width: 2;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+}
+
+/* Retro button styles */
+.retro-btn {
+  position: relative;
+  border: 3px solid;
+  box-shadow: 
+    3px 3px 0px rgba(0, 0, 0, 0.5),
+    inset -2px -2px 0px rgba(0, 0, 0, 0.3),
+    inset 2px 2px 0px rgba(255, 255, 255, 0.3);
+  transition: all 0.1s;
+}
+
+.retro-btn:hover:not(:disabled) {
+  transform: translate(1px, 1px);
+  box-shadow: 
+    2px 2px 0px rgba(0, 0, 0, 0.5),
+    inset -2px -2px 0px rgba(0, 0, 0, 0.3),
+    inset 2px 2px 0px rgba(255, 255, 255, 0.3);
+}
+
+.retro-btn:active:not(:disabled) {
+  transform: translate(3px, 3px);
+  box-shadow: 
+    0px 0px 0px rgba(0, 0, 0, 0.5),
+    inset -2px -2px 0px rgba(0, 0, 0, 0.3),
+    inset 2px 2px 0px rgba(255, 255, 255, 0.3);
+}
+
+/* Stone texture pattern */
+.stone-pattern {
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.1) 2px,
+      rgba(0, 0, 0, 0.1) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.1) 2px,
+      rgba(0, 0, 0, 0.1) 4px
+    );
+}
+
+/* Checkerboard pattern for game grid */
+.checkerboard-light {
+  background-color: #d4c8b0;
+}
+
+.checkerboard-dark {
+  background-color: #b4a890;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+/* Custom Tailwind extensions */
+@theme {
+  --color-castle-stone: #5a5a5a;
+  --color-castle-stone-dark: #3a3a3a;
+  --color-castle-stone-light: #8a8a8a;
+  --color-castle-brown: #8b6f47;
+  --color-castle-brown-dark: #654321;
+  --color-castle-gold: #ffd700;
+  --color-castle-red: #8b0000;
+  --color-castle-blue: #4169e1;
+  --color-castle-green: #2d8b2d;
+  --color-parchment: #f4e8d0;
+  --color-parchment-dark: #d4c8b0;
+}
