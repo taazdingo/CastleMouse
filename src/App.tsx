@@ -13,6 +13,14 @@ import { CustomLevelsScreen } from './components/CustomLevelsScreen';
 import { LEVELS } from './data/levels';
 import { loadCustomLevels, addCustomLevel, deleteCustomLevel } from './utils/levelStorage';
 
+// Load Google Font dynamically
+if (typeof document !== 'undefined') {
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap';
+  document.head.appendChild(link);
+}
+
 type Screen = 'home' | 'levelSelect' | 'game' | 'editor' | 'preview' | 'customLevels' | 'customGame';
 
 function App() {

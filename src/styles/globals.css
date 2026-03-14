@@ -1,7 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
-@custom-variant dark (&:is(.dark *));
-
 @theme {
   --color-castle-stone: #5a5a5a;
   --color-castle-stone-dark: #3a3a3a;
@@ -16,20 +12,9 @@
   --color-parchment-dark: #d4c8b0;
 }
 
+@import "tailwindcss";
+
 :root {
-  /* Retro Castle Color Palette */
-  --castle-stone: #5a5a5a;
-  --castle-stone-dark: #3a3a3a;
-  --castle-stone-light: #8a8a8a;
-  --castle-brown: #8b6f47;
-  --castle-brown-dark: #654321;
-  --castle-gold: #ffd700;
-  --castle-red: #8b0000;
-  --castle-blue: #4169e1;
-  --castle-green: #2d8b2d;
-  --parchment: #f4e8d0;
-  --parchment-dark: #d4c8b0;
-  
   --font-size: 16px;
   --background: #2a2a2a;
   --foreground: #f4e8d0;
@@ -39,14 +24,15 @@
 
 @layer base {
   * {
-    @apply border-castle-stone;
+    border-color: #5a5a5a;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
   }
 
   body {
-    @apply bg-castle-stone-dark text-parchment;
+    background-color: #3a3a3a;
+    color: #f4e8d0;
     font-family: 'Press Start 2P', cursive;
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: grayscale;
